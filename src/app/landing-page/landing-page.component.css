@@ -1,0 +1,164 @@
+body, html{
+    height: 100%;
+    display: block;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    line-height: 1.8em;
+    color: #666;
+}
+
+
+.home-media-top #video1{
+    min-height: 100%;
+    max-height: 100%;
+    max-width: 100%;;
+}
+
+.first-image, .second-image, .third-image, .fourth-image{
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.8;
+    background-repeat: no-repeat;
+
+    /*
+     This will bring the parallax effect
+    */
+    background-attachment: fixed;
+}
+
+.first-image{
+    background-image: url('../../assets/images/image3.jpg');
+    min-height: 400px;
+}
+
+.second-image{
+    background-image: url('../../assets/images/image4.jpg');
+    min-height: 500px;
+}
+
+.third-image{
+    background-image: url('../../assets/images/image5.jpg');
+    min-height: 500px;
+}
+
+.fourth-image{
+    background-image: url('../../assets/images/image1.jpg');
+    min-height: 200px;
+}
+
+.section{
+    text-align: center;
+    padding: 50px 100px;
+    /* margin: 5px 0; */
+}
+
+.section-light{
+    background-color: #ead050;
+    color: #070e28;
+}
+
+.section-dark{
+    background-color: #070e28;
+    color: #ead050;
+}
+
+.ptext{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    color: #000;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase
+}
+
+.align-center{
+    text-align: center;
+}
+
+
+.ptext .border{
+    background-color: #111;
+    color: white;
+}
+
+.ptext .border.transparent{
+    background-color: transparent;
+}
+
+.ptext .border.box{
+    padding: 20px;
+    background-color: #000;
+}
+
+@media(max-width:568px){
+    .first-image, .second-image{
+        background-attachment: scroll;
+    }
+
+    .home-media-top .ptext{
+        top: 10%;
+        font-size: 15px;
+        letter-spacing: 0px;
+    }
+}
+
+@media(min-width:568px) and  (max-width:1024px){
+    .home-media-top .ptext{
+        top: 30%;
+        font-size: 20px;
+        letter-spacing: 4px;
+    }
+}
+
+
+/***alternate text decoration**/
+.text_1 {
+    animation: text1;
+  }
+  .text_2 {
+    animation: text2;
+  }
+  .text_1, .text_2 {
+    padding: 20px 0;
+    font-size: 25px;
+    font-weight: 700;
+    border-right: 4px solid orange;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+    animation-duration: 30s;
+    animation-timing-function: steps(25, end);
+    animation-iteration-count: infinite;
+  }
+  .text_1::after, .text_2::after {
+    content: "|";
+    position: absolute;
+    right: 0;
+    animation: caret infinite;
+    animation-duration: 1s;
+    animation-timing-function: steps(1, end);
+  }
+
+  @keyframes text2 {
+    0%, 50%, 100% {
+      width: 0;
+    }
+    
+    60%, 90% {
+      width: 45em;
+    }
+  }
+  @keyframes text1 {
+    0%, 50%, 100% {
+      width: 0;
+    }
+    10%, 40% {
+      width: 43em;
+    }
+  }
+
